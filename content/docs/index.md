@@ -35,7 +35,7 @@ const axios = require("axios");
 
 (async function () {
   //Declare api url
-  let apiUrl = "https://shoti-api.libyzxy0.xyz/api/get-shoti";
+  let apiUrl = "https://api--v1-shoti.vercel.app/api/v1/get";
 
   //Make a post request
   let { data } = await axios.post(apiUrl, {
@@ -45,27 +45,26 @@ const axios = require("axios");
   console.log(data);
 })();
 ```
-
-## Adding Videos
-
-Code Node.js (JavaScript)
-
-```js
-const axios = require("axios");
-
-(async function () {
-  //Declare api url
-  let apiUrl = "https://shoti-api.libyzxy0.xyz/api/add-shoti";
-
-  //Make a post request
-  let { data } = await axios.post(apiUrl, {
-    apikey: "YOUR_API_KEY",
-    url: "TIKTOK_URL",
-  });
-
-  console.log(data);
-})();
+Returns this
+```json 
+{
+  "code": Number,
+  "message": String,
+  "data": {
+    "_shoti_rank": Number,
+    "region": String,
+    "url": URL,
+    "cover": URL,
+    "title": String,
+    "duration": String,
+    "user": {
+      "username": String,
+      "nickname": String
+    }
+  }
+}
 ```
+![demo](/demo.jpg)
 
 ## Author
 
