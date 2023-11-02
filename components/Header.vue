@@ -15,27 +15,26 @@ const toggleMenu = () => {
   </div>
 
   <div
-    :class="isMenuOpen ? 'h-[15.8rem] mt-3 shadow' : 'h-0'"
-    class="fixed flex top-0 bg-slate-700 w-full z-10 transition-all"
+    :class="isMenuOpen ? 'h-[15rem] mt-3 shadow' : 'h-0'"
+    class="fixed flex top-0 bg-slate-700 w-full z-10 transition-all py-1"
   >
     <ul
-      :class="isMenuOpen ? 'mt-[3rem]' : 'mt-[-7rem]'"
-      class="transition-all flex flex-col text-center w-full items-center"
-    >
-      <hr class="h-px bg-slate-600 border-0 w-[90%] mb-2" />
-      <li class="flex flex-row text-white text-base my-4">
+      :class="isMenuOpen ? '' : 'mt-[-8rem]'"
+      class="transition-all flex flex-col text-center w-full">
+        <hr :class="isMenuOpen ? 'mt-10' : ''" class="h-px bg-slate-600 border-0 w-full mb-2" />
+      <li class="flex flex-row text-white text-base my-4 px-4">
         <IconsHome />
         <NuxtLink class="mx-2" to="/">Home</NuxtLink>
       </li>
-      <li class="flex flex-row text-white text-base mb-4">
+      <li class="flex flex-row text-white text-base mb-4 px-4">
         <IconsBook />
         <NuxtLink class="mx-2" to="/docs">Docs</NuxtLink>
       </li>
-      <li class="flex flex-row text-white text-base mb-4">
-        <IconsPlus />
+      <li class="flex flex-row text-white text-base mb-4 px-4">
+        <IconsChart />
         <NuxtLink class="mx-2" to="/leaderboard">Leaderboard</NuxtLink>
       </li>
-      <li class="flex flex-row text-white text-base mb-4">
+      <li class="flex flex-row text-white text-base mb-4 px-4">
         <IconsPlus />
         <NuxtLink class="mx-2" to="/add-video">Add Video</NuxtLink>
       </li>

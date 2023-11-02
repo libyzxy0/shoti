@@ -24,7 +24,7 @@ npm install axios
 
 ## Getting Apikey
 
-Getting aikey is really easy, we only get your name and we serve your apikey, get your apikey [here](/).
+Getting apikey is really easy, we only get your name and we serve your apikey, get your apikey [here](/).
 
 ## Getting Videos
 

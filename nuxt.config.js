@@ -6,10 +6,14 @@ export default defineNuxtConfig({
       hmr: {
         protocol: "wss",
         clientPort: 4000,
+        host: '0.0.0.0'
       },
     },
   },
-  modules: ["@nuxtjs/google-fonts", "@nuxt/content"],
+  modules: [
+    "@nuxtjs/google-fonts", 
+    "@nuxt/content"
+  ],
   css: ["@/assets/scss/global.scss", "@/assets/css/markdown.css"],
   googleFonts: {
     families: {
@@ -31,5 +35,9 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
-  },
+  }, 
+  runtimeConfig: {
+    dbUrl: process.env.MONGODB_CONNECTION_URI, 
+    dbName: process.env.MONGODB_DB_NAME
+  }
 });

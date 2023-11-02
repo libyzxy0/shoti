@@ -1,5 +1,6 @@
 <template>
-  <div class="absolute bg-slate-800 top-0 left-0 right-0 bottom-0">
+  <div class="w-full bg-slate-800 h-screen">
     <slot />
+    <Footer />
   </div>
 </template>

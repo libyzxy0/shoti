@@ -1,9 +1,41 @@
 <script setup lang="ts">
+import VueHcaptcha from '@hcaptcha/vue3-hcaptcha';
 useHead({
-  title: "Shoti API",
+  title: "Shoti API", 
 });
-</script>
+let isCaptcha = ref(false);
+let apikeyName = ref('');
+async function onVerify(token, ekey) {
+  isCaptcha.value = true;
+}
+function generate() {
+  if(apikeyName.value) {
+    if(isCaptcha.value) {
+      alert('Success')
+      hcaptcha.reset()
+    } else {
+      alert('Please verify captcha!')
+    }
+  } else {
+    alert("Please specify apikey name!")
+  }
+}
+</script> 
 <template>
   <Header />
-  <div>Index page</div>
+  <div class="container mt-24 w-full px-3">
+    <div class="w-full my-8">
+      <h1 class="text-cyan-400 text-3xl">Shoti API | VideoCount</h1>
+      <p class="text-white">A powerful api that sends random tiktok beautiful girl videos.</p>
+    </div>
+    <h1 class="text-cyan-400 text-2xl my-5">Get Your Apikey</h1>
+    <div class="flex flex-col w-full">
+      <input v-model="apikeyName" type="text" class="outline-none border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-cyan-500 focus:border-cyan-500" placeholder="Enter your Name" required>
+<vue-hcaptcha theme="dark" class="my-2 w-full bg-slate-800" sitekey="3075ecff-8f1a-4e29-991c-4817245e9558" @verify="onVerify"></vue-hcaptcha>
+      <button @click="generate" class="bg-cyan-400 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded">Generate Apikey</button>
+    </div>
+    <div class="w-full mt-8">
+      <Vidplayer />
+    </div>
+  </div>
 </template>
