@@ -1,8 +1,3 @@
----
-title: "Shoti API | Documentation"
-description: "See documentation of shoti api, how to use it."
----
-
 # Shoti API | Docs
 
 An API that sends random beautiful girl videos/images.
@@ -28,7 +23,7 @@ Getting apikey is really easy, we only get your name and we serve your apikey, g
 
 ## Getting Videos
 
-Code Node.js (JavaScript)
+**Code Node.js (JavaScript)**
 
 ```js
 const axios = require("axios");
@@ -45,7 +40,12 @@ const axios = require("axios");
   console.log(data);
 })();
 ```
-Returns this
+**Parameters**
+| Parameter | Description |
+| --- | --- |
+| apikey | Apikey is required to help us identify who is the user and put it to leaderboard. | 
+
+**Returns this**
 ```json 
 {
   "code": Number,
@@ -65,7 +65,6 @@ Returns this
 }
 ```
 ![demo](/demo.jpg)
-
-## Author
-
-- Jan Liby Dela Costa
+## Special Tanks To
+* Bundas Andrian
+* [Chatbot Community Ltd.](https://facebook.com/groups/178711334798450/) members!

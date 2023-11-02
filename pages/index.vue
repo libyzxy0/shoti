@@ -1,8 +1,16 @@
 <script setup lang="ts">
 import VueHcaptcha from '@hcaptcha/vue3-hcaptcha';
 useHead({
-  title: "Shoti API", 
+  title: "Shoti API - Random girl video API", 
 });
+useSeoMeta({
+  title: 'Shoti API - Random girl video API',
+  ogTitle: 'Shoti API - Random girl video API',
+  description: 'A powerful api that sends random tiktok beautiful girl videos.',
+  ogDescription: 'A powerful api that sends random tiktok beautiful girl videos.',
+  ogImage: 'https://shoti.vercel.app/favicon.png',
+  twitterCard: 'summary_large_image',
+})
 let isCaptcha = ref(false);
 let apikeyName = ref('');
 async function onVerify(token, ekey) {

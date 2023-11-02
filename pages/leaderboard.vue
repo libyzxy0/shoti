@@ -1,4 +1,15 @@
 <script setup>
+  useHead({
+  title: "Shoti API | Top Users", 
+});
+useSeoMeta({
+  title: 'Shoti API | Top Users',
+  ogTitle: 'Shoti API | Top Users',
+  description: 'A powerful api that sends random tiktok beautiful girl videos.',
+  ogDescription: 'A powerful api that sends random tiktok beautiful girl videos.',
+  ogImage: 'https://shoti.vercel.app/favicon.png',
+  twitterCard: 'summary_large_image',
+})
   let { pending, data } = useFetch('https://shoti-api.libyzxy0.repl.co/get/leaderboard', {
     lazy: true, 
     server: false, 
