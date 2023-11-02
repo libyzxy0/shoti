@@ -10,6 +10,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  nitro: {
+    preset: "vercel",
+  },
   modules: [
     "@nuxtjs/google-fonts", 
     "@nuxt/content"
