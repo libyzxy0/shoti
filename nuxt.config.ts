@@ -10,9 +10,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  nitro: {
-    preset: "vercel",
-  },
   modules: [
     "@nuxtjs/google-fonts", 
     "@nuxt/content"
@@ -39,8 +36,10 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   }, 
+  /*
   runtimeConfig: {
     dbUrl: process.env.MONGODB_CONNECTION_URI, 
     dbName: process.env.MONGODB_DB_NAME
   }
+  */
 });

@@ -20,7 +20,7 @@
       </p>
     </div>
     <div :class="pending ? 'hidden' : ''" class="w-auto h-[16rem] flex items-center justify-center mt-2">
-      <video v-if="!pending" class="h-auto h-[16rem] w-[9rem] rounded shadow mx-3" controls autoplay>
+      <video v-if="!pending" class="h-auto h-[16rem] w-[9rem] rounded shadow mx-3" controls autoplay loop>
         <source :src="pending ? '' : data?.data?.url" type="video/mp4">
       </video>
     </div>
