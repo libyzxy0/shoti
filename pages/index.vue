@@ -25,7 +25,7 @@ function generate() {
   <Header />
   <div class="container mt-24 w-full px-3">
     <div class="w-full my-8">
-      <h1 class="text-cyan-400 text-3xl">Shoti API | VideoCount</h1>
+      <h1 class="text-cyan-400 text-3xl">Shoti API | Beta</h1>
       <p class="text-white">A powerful api that sends random tiktok beautiful girl videos.</p>
     </div>
     <h1 class="text-cyan-400 text-2xl my-5">Get Your Apikey</h1>
