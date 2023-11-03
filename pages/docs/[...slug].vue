@@ -1,7 +1,4 @@
-<script setup>
-  useHead({
-  title: "Shoti API | Documentation", 
-});
+<script setup>  
 useSeoMeta({
   title: 'Shoti API | Documentation',
   ogTitle: 'Shoti API | Documentation',
@@ -19,5 +16,6 @@ useSeoMeta({
         <h1>Document not found</h1>
       </template>
     </ContentDoc>
+    <Githubedit />
   </main>
 </template>

@@ -1,3 +1,8 @@
+---
+title: Shoti API | Docs
+description: An API that sends random beautiful girl videos/images.
+---
+
 # Shoti API | Docs
 
 An API that sends random beautiful girl videos/images.
