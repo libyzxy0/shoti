@@ -7,7 +7,6 @@ An API that sends random beautiful girl videos/images.
 - [Installation](#installation)
 - [Getting Apikey](#getting-apikey)
 - [Getting Videos](#getting-videos)
-- [Adding Videos](#adding-videos)
 
 ## Installation
 

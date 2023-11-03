@@ -11,8 +11,9 @@ export default defineNuxtConfig({
     },
   },
   modules: [
-    "@nuxtjs/google-fonts", 
-    "@nuxt/content"
+    "@nuxtjs/google-fonts",
+    "@nuxt/content", 
+    "nuxt-gtag"
   ],
   css: ["@/assets/scss/global.scss", "@/assets/css/markdown.css"],
   googleFonts: {
@@ -35,7 +36,14 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
-  }, 
+  },
+  gtag: {
+    id: 'G-86LPK0H948', 
+    config: {
+      page_title: 'Shoti API'
+    }, 
+    loadingStrategy: 'async'
+  }
   /*
   runtimeConfig: {
     dbUrl: process.env.MONGODB_CONNECTION_URI, 
