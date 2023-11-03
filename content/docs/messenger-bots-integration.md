@@ -73,7 +73,7 @@ module.exports.run = async function ({ api, event }) {
 
 ## Hexabot
 **cmds/shoti.js**
-```
+```js
 const axios = require('axios');
 const fs = require('fs');
 const request = require('request');
