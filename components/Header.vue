@@ -20,8 +20,12 @@ const toggleMenu = () => {
   >
     <ul
       :class="isMenuOpen ? '' : 'mt-[-8rem]'"
-      class="transition-all flex flex-col text-center w-full">
-        <hr :class="isMenuOpen ? 'mt-10' : ''" class="h-px bg-slate-600 border-0 w-full mb-2" />
+      class="transition-all flex flex-col text-center w-full"
+    >
+      <hr
+        :class="isMenuOpen ? 'mt-10' : ''"
+        class="h-px bg-slate-600 border-0 w-full mb-2"
+      />
       <li class="flex flex-row text-white text-base my-4 px-4">
         <IconsHome />
         <NuxtLink class="mx-2" to="/">Home</NuxtLink>

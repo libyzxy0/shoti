@@ -12,6 +12,7 @@ An API that sends random beautiful girl videos/images.
 - [Installation](#installation)
 - [Getting Apikey](#getting-apikey)
 - [Getting Videos](#getting-videos)
+
 ## Installation
 
 Install axios package
@@ -43,13 +44,15 @@ const axios = require("axios");
   console.log(data);
 })();
 ```
+
 **Parameters**
 | Parameter | Description |
 | --- | --- |
-| apikey | Apikey is required to help us identify who is the user and put it to leaderboard. | 
+| apikey | Apikey is required to help us identify who is the user and put it to leaderboard. |
 
 **Returns this**
-```json 
+
+```json
 {
   "code": Number,
   "message": String,
@@ -67,8 +70,11 @@ const axios = require("axios");
   }
 }
 ```
+
 ![demo](/demo.jpg)
+
 ## Special Thanks To
-* [Chatbot Community Ltd.](https://facebook.com/groups/178711334798450/) members!
+
+- [Chatbot Community Ltd.](https://facebook.com/groups/178711334798450/) members!
 
 Are you a messenger bot developer? [Click here](/docs/messenger-bots-integration).

@@ -9,7 +9,8 @@
     "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:js && npm run lint:prettier",
-    "lintfix": "prettier --write --list-different . && npm run lint:js --fix"
+    "lintfix": "prettier --write --list-different . && npm run lint:js --fix",
+    "format": "prettier . --write"
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.0.0",
