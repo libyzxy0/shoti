@@ -69,3 +69,7 @@ module.exports.run = async function ({ api, event }) {
   }
 };
 ```
+
+## Hexabot
+
+## Goatbot
