@@ -32,7 +32,7 @@ async function generate() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: !!apikeyName.value ? apikeyName.value : "Anonymous User",
+          username: apikeyName.value,
         }),
       });
       isLoading.value = false;
@@ -73,7 +73,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
         v-model="apikeyName"
         type="text"
         class="outline-none border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-cyan-500 focus:border-cyan-500"
-        placeholder="Enter your Name"
+        placeholder="Enter Name for your Apikey"
         required
       />
       <vue-hcaptcha
