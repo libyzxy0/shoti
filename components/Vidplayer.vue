@@ -1,5 +1,6 @@
 <script setup>
-  const { pending, data } = useFetch('https://api--v1-shoti.vercel.app/api/v1/get', {
+  const config = useRuntimeConfig();
+  const { pending, data } = useFetch(config.public.apiBase + '/v1/get', {
   lazy: true, 
   server: false, 
   method: "POST", 
@@ -14,7 +15,7 @@
 
 <template>
   <div :class="pending ? 'justify-center items-center h-[17rem]' : 'justify-between h-[17rem]'" class="flex flex-row bg-slate-600 w-full rounded shadow mb-3">
-    <h1 :class="pending ? '' : 'hidden'" class="text-2xl text-cyan-400">Loading Player...</h1>
+    <h1 :class="pending ? '' : 'hidden'" class="text-2xl text-cyan-400">Fetching data from <a :href="$config.public.apiBase">server</a>.</h1>
     <div :class="pending ? 'hidden' : ''" class="flex flex-col w-[65%] h-auto text-center rounded px-2 py-2">
       <h1 class="text-2xl text-cyan-400 my-3">Watch </h1>
       <p class="text-white"><b>Username:</b> {{ pending ? 'Loading...' : data?.data?.user.username }}</p>

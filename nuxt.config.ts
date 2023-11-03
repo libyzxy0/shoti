@@ -30,12 +30,13 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Nunito: [300],
+      'Ubuntu Mono': [400]
     },
   },
   content: {
     highlight: {
       theme: {
-        default: "dracula",
+        default: "github-dark",
         dark: "github-dark",
         sepia: "monokai",
       },
@@ -54,11 +55,10 @@ export default defineNuxtConfig({
       page_title: 'Shoti API'
     }, 
     loadingStrategy: 'async'
-  }
-  /*
+  }, 
   runtimeConfig: {
-    dbUrl: process.env.MONGODB_CONNECTION_URI, 
-    dbName: process.env.MONGODB_DB_NAME
+    public: {
+      apiBase: 'https://api--v1-shoti.vercel.app/api'
+    }
   }
-  */
 });
