@@ -19,6 +19,7 @@ Getting apikey is really easy, we only get your name and we serve your apikey, g
 ## Getting Videos
 
 ### Curl
+
 ```shell
 curl -d '{"apikey":"YOUR_API_KEY"}' -H "Content-Type: application/json" -X POST https://api--v1-shoti.vercel.app/api/v1/get
 ```

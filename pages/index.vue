@@ -18,7 +18,7 @@ let isCaptcha = ref(false);
 let apikeyName = ref("");
 let mykey = ref(null);
 let isLoading = ref(false);
-  
+
 async function onVerify(token, ekey) {
   isCaptcha.value = true;
 }
@@ -37,6 +37,7 @@ async function generate() {
       });
       isLoading.value = false;
       mykey.value = data.apikey;
+      localStorage.setItem("saved_apikey", data.apikey);
     } else {
       alert("Please verify captcha!");
     }
@@ -59,7 +60,9 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
   <ModalOne :visible="mykey ? mykey : 'f'" />
   <div class="container mt-24 w-full px-3">
     <div class="w-full my-8">
-      <h1 class="text-cyan-400 text-3xl">Shoti API | {{ pending ? '...' : data.count }}</h1>
+      <h1 class="text-cyan-400 text-3xl">
+        Shoti API | {{ pending ? "..." : data.count }}
+      </h1>
       <p class="text-white">
         A powerful api that sends random tiktok beautiful girl videos.
       </p>

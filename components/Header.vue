@@ -9,7 +9,9 @@ const toggleMenu = () => {
     class="fixed transition-all flex flex-row justify-between top-0 bg-slate-700 py-3 w-full z-20"
     :class="isMenuOpen ? '' : 'shadow'"
   >
-    <h1 class="px-4 text-2xl text-cyan-400 font-medium">Shoti API</h1>
+    <h1 class="flex flex-row px-4 text-2xl text-cyan-400 font-medium">
+      Shoti API
+    </h1>
     <IconsBar @click="toggleMenu()" :class="isMenuOpen ? 'hidden' : ''" />
     <IconsX @click="toggleMenu()" :class="isMenuOpen ? '' : 'hidden'" />
   </div>
@@ -39,8 +41,8 @@ const toggleMenu = () => {
         <NuxtLink class="mx-2" to="/leaderboard">Leaderboard</NuxtLink>
       </li>
       <li class="flex flex-row text-white text-base mb-4 px-4">
-        <IconsPlus />
-        <NuxtLink class="mx-2" to="/add-video">Add Video</NuxtLink>
+        <IconsInfo />
+        <NuxtLink class="mx-2" to="/info">API Info</NuxtLink>
       </li>
     </ul>
   </div>

@@ -64,7 +64,8 @@ defineProps({
           >
             Close
           </button>
-          <button @click="copy()"
+          <button
+            @click="copy()"
             class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-cyan-500 text-white hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all text-sm focus:ring-offset-gray-800"
           >
             {{ btn }}
@@ -78,15 +79,15 @@ defineProps({
 export default {
   data() {
     return {
-      btn: 'Copy Apikey'
-    }
-  }, 
+      btn: "Copy Apikey",
+    };
+  },
   methods: {
     copy() {
       navigator.clipboard.writeText(this.visible).then(() => {
-        this.btn = 'Copied!'
+        this.btn = "Copied!";
         setTimeout(() => {
-          this.btn = 'Copy Apikey'
+          this.btn = "Copy Apikey";
         }, 3000);
       });
     },

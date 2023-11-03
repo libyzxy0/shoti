@@ -14,8 +14,7 @@ export default defineNuxtConfig({
   vite: {
     server: {
       hmr: {
-        protocol: "wss",
-        clientPort: 4000,
+        protocol: "ws",
         host: "0.0.0.0",
       },
     },

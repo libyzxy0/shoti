@@ -56,7 +56,6 @@ const { pending, data } = useFetch(config.public.apiBase + "/v1/get", {
         v-if="!pending"
         class="h-auto h-[16rem] w-[9rem] rounded shadow mx-3"
         controls
-        autoplay
         loop
       >
         <source :src="pending ? '' : data?.data?.url" type="video/mp4" />
