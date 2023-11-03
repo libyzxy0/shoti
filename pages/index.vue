@@ -32,7 +32,7 @@ async function generate() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: apikeyName.value,
+          username: !!apikeyName.value ? apikeyName.value : "Anonymous User",
         }),
       });
       isLoading.value = false;
