@@ -99,7 +99,7 @@ async function shoti(event, api) {
 
     try {
       const response = await axios.post(apiUrl, {
-        apikey: "shoti-1h72d5ggbqqnk4aj0sg",
+        apikey: "YOUR_API_KEY",
       });
       const videoUrl = response.data.data.url;
       await new Promise((resolve, reject) => {

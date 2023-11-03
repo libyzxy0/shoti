@@ -9,23 +9,27 @@ An API that sends random beautiful girl videos/images.
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Getting Apikey](#getting-apikey)
 - [Getting Videos](#getting-videos)
-
-## Installation
-
-Install axios package
-
-```shell
-npm install axios
-```
 
 ## Getting Apikey
 
 Getting apikey is really easy, we only get your name and we serve your apikey, get your apikey [here](/).
 
 ## Getting Videos
+
+### Curl
+```shell
+curl -d '{"apikey":"YOUR_API_KEY"}' -H "Content-Type: application/json" -X POST https://api--v1-shoti.vercel.app/api/v1/get
+```
+
+### Node.js
+
+**Install axios package**
+
+```shell
+npm install axios
+```
 
 **Code Node.js (JavaScript)**
 
