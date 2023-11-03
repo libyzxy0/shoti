@@ -12,7 +12,7 @@ onMounted(() => {
       <Servicecard name="Website" status="success" />
       <Servicecard name="Get Shoti" status="warning" />
       <Servicecard name="Add Shoti" status="error" />
-      <Servicecard name="Create Key" status="success" />
+      <Servicecard name="Create Key" status="warning" />
     </div>
     <h1 class="text-2xl font-medium text-white">Analytics</h1>
     <div class="w-full my-5 text-center">
