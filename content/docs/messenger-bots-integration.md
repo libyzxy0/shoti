@@ -7,12 +7,19 @@ description: Shoti API messenger chatbots integration.
 
 Shoti API messenger chatbots integration.
 
+## Supported Bots
+- [Mirai Bot](#mirai-bot)
+- [Goatbot](#goatbot)
+- [HexaBot](#hexabot)
+- [YueV1](#yuev1)
+
+
 ## Install Packages
 
 ```shell
-yarn add axios request fs
+yarn add axios request fs path
 # or
-npm i axios request fs
+npm i axios request fs path
 ```
 
 ## Mirai Bot
@@ -151,7 +158,7 @@ module.exports = {
 };
 ```
 
-## Hexabot
+## HexaBot
 
 **cmds/shoti.js**
 

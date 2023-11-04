@@ -76,8 +76,6 @@ const axios = require("axios");
 }
 ```
 
-![demo](/demo.jpg)
-
 ## Special Thanks To
 
 - [Chatbot Community Ltd.](https://facebook.com/groups/178711334798450/) members!

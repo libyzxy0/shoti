@@ -25,7 +25,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
   <div class="container mt-24 w-full px-3">
     <div class="w-full my-8">
       <h1 class="text-cyan-400 text-3xl">
-        Shoti API | {{ pending ? "..." : data.count }}
+        Shoti API | {{ pending ? "..." : data.videos }}
       </h1>
       <p class="text-white">
         A powerful api that sends random tiktok beautiful girl videos.
