@@ -6,3 +6,7 @@ body {
   background-color: #1e293b;
   font-family: "Nunito", sans-serif;
 }
+::selection {
+  background-color: #EB4899;
+  color: #000000;
+}

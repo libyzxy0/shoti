@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     "nuxt-gtag",
     "nuxt-simple-sitemap",
   ],
-  css: ["@/assets/scss/global.scss", "@/assets/css/markdown.css"],
+  css: ["@/assets/scss/global.scss", "@/assets/scss/markdown.scss"],
   googleFonts: {
     families: {
       Nunito: [300],
