@@ -16,7 +16,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ f: "count" }), 
+  body: JSON.stringify({ f: "stats" }), 
 });
 </script>
 <template>

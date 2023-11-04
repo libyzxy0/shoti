@@ -3,6 +3,15 @@ let apikey = ref("");
 onMounted(() => {
   apikey.value = localStorage.getItem("saved_apikey");
 });
+let { pending, data } = useFetch(config.public.apiBase + "/info", {
+  lazy: true,
+  server: false,
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ f: "stats" }), 
+});
 </script>
 <template>
   <Header />
@@ -14,14 +23,14 @@ onMounted(() => {
       <Servicecard name="Add Shoti" status="error" />
       <Servicecard name="Create Key" status="success" />
     </div>
-    <h1 class="text-2xl font-medium text-white">Analytics</h1>
+    <h1 class="text-2xl font-medium text-white">Statistics</h1>
     <div class="w-full my-5 text-center">
       <hr class="h-px bg-slate-600 border-0 w-full mb-2" />
-      <h1 class="text-white font-medium text-5xl mt-5">2929</h1>
+      <h1 class="text-white font-medium text-5xl mt-5">{{ pending ? 'Loading...' : data.requests }}</h1>
       <p class="text-white mt-3">Total Requests</p>
-      <h1 class="text-white font-medium text-5xl mt-5">54</h1>
+      <h1 class="text-white font-medium text-5xl mt-5">{{ pending ? 'Loading...' : data.users }}</h1>
       <p class="text-white mt-3">Users</p>
-      <h1 class="text-white font-medium text-5xl mt-5">825</h1>
+      <h1 class="text-white font-medium text-5xl mt-5">{{ pending ? 'Loading...' : data.videos }}</h1>
       <p class="text-white mt-3">Videos</p>
     </div>
     <hr class="h-px bg-slate-600 border-0 w-full mb-2" />
