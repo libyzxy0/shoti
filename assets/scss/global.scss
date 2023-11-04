@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #1e293b;
   font-family: "Nunito", sans-serif;
