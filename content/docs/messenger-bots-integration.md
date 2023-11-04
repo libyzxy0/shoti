@@ -44,6 +44,10 @@ module.exports.run = async function ({ api, event }) {
         apikey: "YOUR-API-KEY",
       },
     );
+    if(response.data.code !== 200) {
+      api.sendMessage(`API ERROR: ${response.data}`, event.threadID, event.messageID);
+      return;
+    }
     var file = fs.createWriteStream(__dirname + "/cache/shoti.mp4");
     var rqs = request(encodeURI(response.data.data.url));
     rqs.pipe(file);
@@ -180,6 +184,10 @@ async function shoti(event, api) {
       const response = await axios.post(apiUrl, {
         apikey: "YOUR_API_KEY",
       });
+      if(response.data.code !== 200) {
+      api.sendMessage(`API ERROR: ${response.data}`, event.threadID, event.messageID);
+      return;
+      }
       const videoUrl = response.data.data.url;
       await new Promise((resolve, reject) => {
         request(videoUrl)
@@ -254,8 +262,12 @@ Please wait for the video..`,
 
       // Make a POST request to get the video URL
       let { data } = await axios.post(apiUrl, {
-        apikey: "$shoti-1hea9d5pm9rlq7urifo",
+        apikey: "YOUR_API_KEY",
       });
+      if(data.code !== 200) {
+      api.sendMessage(`API ERROR: ${data}`, event.threadID, event.messageID);
+      return;
+      }
 
       console.log("API Response:", data); // Log the API response for inspection
 
