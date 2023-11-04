@@ -12,7 +12,7 @@ onMounted(() => {
       <Servicecard name="Website" status="success" />
       <Servicecard name="Get Shoti" status="warning" />
       <Servicecard name="Add Shoti" status="error" />
-      <Servicecard name="Create Key" status="warning" />
+      <Servicecard name="Create Key" status="success" />
     </div>
     <h1 class="text-2xl font-medium text-white">Analytics</h1>
     <div class="w-full my-5 text-center">
@@ -21,7 +21,7 @@ onMounted(() => {
       <p class="text-white mt-3">Total Requests</p>
       <h1 class="text-white font-medium text-5xl mt-5">54</h1>
       <p class="text-white mt-3">Users</p>
-      <h1 class="text-white font-medium text-5xl mt-5">810</h1>
+      <h1 class="text-white font-medium text-5xl mt-5">825</h1>
       <p class="text-white mt-3">Videos</p>
     </div>
     <hr class="h-px bg-slate-600 border-0 w-full mb-2" />

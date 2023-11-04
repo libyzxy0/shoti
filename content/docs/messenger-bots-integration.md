@@ -71,63 +71,79 @@ module.exports.run = async function ({ api, event }) {
 ```
 
 ## Goatbot
+
 ```js
-const axios = require('axios');
-const fs = require('fs');
-const request = require('request');
+const axios = require("axios");
+const fs = require("fs");
+const request = require("request");
 
 module.exports = {
-	config: {
-		name: 'shoti',
-		version: '1.0',
-		author: 'Ronald Allen Albania',
-		countDown: 20,
-		category: 'chatbox',
-	},
+  config: {
+    name: "shoti",
+    version: "1.0",
+    author: "Ronald Allen Albania",
+    countDown: 20,
+    category: "chatbox",
+  },
 
-	langs: {
-		vi: {},
-		en: {}
-	},
+  langs: {
+    vi: {},
+    en: {},
+  },
 
-	onStart: async function({
-		api,
-		event
-	}) {
-		api.sendMessage('Fetching a short video from Shoti...', event.threadID);
+  onStart: async function ({ api, event }) {
+    api.sendMessage("Fetching a short video from Shoti...", event.threadID);
 
-		try {
-			let response = await axios.post('https://api--v1-shoti.vercel.app/api/v1/get', {
-				apikey: 'shoti-1ha4h3do8at9a7ponr',
-			});
+    try {
+      let response = await axios.post(
+        "https://api--v1-shoti.vercel.app/api/v1/get",
+        {
+          apikey: "shoti-1ha4h3do8at9a7ponr",
+        },
+      );
 
-			if (response.data.code === 200 && response.data.data && response.data.data.url) {
-				const videoUrl = response.data.data.url;
-				const filePath = __dirname + '/cache/shoti.mp4';
-				const file = fs.createWriteStream(filePath);
-				const rqs = request(encodeURI(videoUrl));
+      if (
+        response.data.code === 200 &&
+        response.data.data &&
+        response.data.data.url
+      ) {
+        const videoUrl = response.data.data.url;
+        const filePath = __dirname + "/cache/shoti.mp4";
+        const file = fs.createWriteStream(filePath);
+        const rqs = request(encodeURI(videoUrl));
 
-				rqs.pipe(file);
+        rqs.pipe(file);
 
-				file.on('finish', async () => {
-					const userInfo = response.data.data.user;
-					const username = userInfo.username;
-					const nickname = userInfo.nickname;
+        file.on("finish", async () => {
+          const userInfo = response.data.data.user;
+          const username = userInfo.username;
+          const nickname = userInfo.nickname;
 
-					await api.sendMessage({
-						attachment: fs.createReadStream(filePath)
-					}, event.threadID);
-					api.sendMessage(`Username: @${username}\nNickname: ${nickname}`, event.threadID);
-				});
-			} else {
-				api.sendMessage('No video URL found in the API response.', event.threadID);
-			}
-
-		} catch (error) {
-			console.error(error);
-			api.sendMessage('An error occurred while fetching the video.', event.threadID);
-		}
-	}
+          await api.sendMessage(
+            {
+              attachment: fs.createReadStream(filePath),
+            },
+            event.threadID,
+          );
+          api.sendMessage(
+            `Username: @${username}\nNickname: ${nickname}`,
+            event.threadID,
+          );
+        });
+      } else {
+        api.sendMessage(
+          "No video URL found in the API response.",
+          event.threadID,
+        );
+      }
+    } catch (error) {
+      console.error(error);
+      api.sendMessage(
+        "An error occurred while fetching the video.",
+        event.threadID,
+      );
+    }
+  },
 };
 ```
 
@@ -201,6 +217,7 @@ module.exports = shoti;
 ```
 
 ## YueV1
+
 **script/commands/shoti.js**
 
 ```js
@@ -223,10 +240,14 @@ module.exports = {
     // Deduct the cost of using the command
     // Code to deduct money from the user goes here if needed
 
-    api.sendMessage(`📸 𝗦𝗵𝗼𝘁𝗶:
+    api.sendMessage(
+      `📸 𝗦𝗵𝗼𝘁𝗶:
 
 You have successfully purchased a shoti video for ${xycost}💵!
-Please wait for the video..`, event.threadID, event.messageID);
+Please wait for the video..`,
+      event.threadID,
+      event.messageID,
+    );
 
     try {
       let apiUrl = "https://api--v1-shoti.vercel.app/api/v1/get";
@@ -259,15 +280,19 @@ Please wait for the video..`, event.threadID, event.messageID);
             {
               attachment: fs.createReadStream(downloadPath),
             },
-            event.threadID
+            event.threadID,
           );
         });
       });
     } catch (error) {
       console.error(error);
-      api.sendMessage(`📸 𝗦𝗵𝗼𝘁𝗶:
+      api.sendMessage(
+        `📸 𝗦𝗵𝗼𝘁𝗶:
 
-Oops! An error occurred while fetching the video.`, event.threadID, event.messageID);
+Oops! An error occurred while fetching the video.`,
+        event.threadID,
+        event.messageID,
+      );
     }
   },
 };
