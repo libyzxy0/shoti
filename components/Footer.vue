@@ -13,10 +13,10 @@
             <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
           </li>
           <li>
-            <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+            <a href="https://github.com/libyzxy0/shoti/blob/main/LICENSE" class="mr-4 hover:underline md:mr-6">Licensing</a>
           </li>
           <li>
-            <a href="#" class="hover:underline">Contact</a>
+            <a href="https://www.libyzxy0.xyz" class="hover:underline">Developer Contact</a>
           </li>
         </ul>
       </div>
