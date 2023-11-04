@@ -1,5 +1,6 @@
 <script setup>
 let apikey = ref("");
+const config = useRuntimeConfig();
 onMounted(() => {
   apikey.value = localStorage.getItem("saved_apikey");
 });
