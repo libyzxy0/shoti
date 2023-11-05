@@ -55,6 +55,7 @@ const { pending, data } = useFetch(config.public.apiBase + "/v1/get", {
       <video
         v-if="!pending"
         class="h-auto h-[16rem] w-[9rem] rounded shadow mx-3"
+        :poster="pending ? 'https://shoti-api.vercel.app/favicon.png' : data?.data?.cover"
         controls
         loop
       >
