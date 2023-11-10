@@ -57,6 +57,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
     <div class="w-full mt-8">
       <Vidplayer />
     </div>
+    <Faq />
   </div>
 </template>
 <script lang="ts">
