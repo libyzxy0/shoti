@@ -11,7 +11,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ f: "stats" }), 
+  body: JSON.stringify({ f: "stats" }),
 });
 </script>
 <template>
@@ -27,11 +27,17 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
     <h1 class="text-2xl font-medium text-white">Statistics</h1>
     <div class="w-full my-5 text-center">
       <hr class="h-px bg-slate-600 border-0 w-full mb-2" />
-      <h1 class="text-white font-medium text-5xl mt-5 transition-all">{{ pending ? '0' : data.requests }}</h1>
+      <h1 class="text-white font-medium text-5xl mt-5 transition-all">
+        {{ pending ? "0" : data.requests }}
+      </h1>
       <p class="text-white mt-3">Total Requests</p>
-      <h1 class="text-white font-medium text-5xl mt-5 transition-all">{{ pending ? '0' : data.users }}</h1>
+      <h1 class="text-white font-medium text-5xl mt-5 transition-all">
+        {{ pending ? "0" : data.users }}
+      </h1>
       <p class="text-white mt-3">Users</p>
-      <h1 class="text-white font-medium text-5xl mt-5 transition-all">{{ pending ? '0' : data.videos }}</h1>
+      <h1 class="text-white font-medium text-5xl mt-5 transition-all">
+        {{ pending ? "0" : data.videos }}
+      </h1>
       <p class="text-white mt-3">Videos</p>
     </div>
     <hr class="h-px bg-slate-600 border-0 w-full mb-2" />

@@ -5,7 +5,8 @@ useSeoMeta({
   title: "Shoti API - Random girl video API",
   ogTitle: "Shoti API - Random girl video API",
   description: "A powerful api that sends random tiktok beautiful girl videos.",
-  ogDescription: "A powerful api that sends random tiktok beautiful girl videos.",
+  ogDescription:
+    "A powerful api that sends random tiktok beautiful girl videos.",
   ogImage: "https://shoti.vercel.app/favicon.png",
   twitterCard: "summary_large_image",
 });
@@ -16,7 +17,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
   headers: {
     "Content-Type": "application/json",
   },
-  body: JSON.stringify({ f: "stats" }), 
+  body: JSON.stringify({ f: "stats" }),
 });
 </script>
 <template>
@@ -65,11 +66,11 @@ import axios from "axios";
 export default {
   data() {
     return {
-      apikeyName: '',
-      generatedkey: '',
+      apikeyName: "",
+      generatedkey: "",
       isLoading: false,
-      isCaptcha: false
-    }
+      isCaptcha: false,
+    };
   },
   methods: {
     async onVerify(token, ekey) {
@@ -80,21 +81,28 @@ export default {
         if (this.isCaptcha) {
           this.isLoading = true;
           try {
-            const response = await axios.post('https://api--v1-shoti.vercel.app/api' + "/createkey", {
-              username: this.apikeyName
-            }, {
-              headers: {
-                "Content-Type": "application/json"
-              }
-            });
+            const response = await axios.post(
+              "https://api--v1-shoti.vercel.app/api" + "/createkey",
+              {
+                username: this.apikeyName,
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              },
+            );
             if (response.data.success) {
               this.generatedkey = response.data.apikey;
               localStorage.setItem("saved_apikey", response.data.apikey);
             } else {
-              alert('Error while generating apikey: ' + JSON.stringify(this.apikeyName));
+              alert(
+                "Error while generating apikey: " +
+                  JSON.stringify(this.apikeyName),
+              );
             }
           } catch (error) {
-            console.error('An error occurred:', error);
+            console.error("An error occurred:", error);
           }
           this.isLoading = false;
         } else {
@@ -103,7 +111,7 @@ export default {
       } else {
         alert("Please specify apikey name!");
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>

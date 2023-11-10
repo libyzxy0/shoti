@@ -8,11 +8,11 @@ description: Shoti API messenger chatbots integration.
 Shoti API messenger chatbots integration.
 
 ## Supported Bots
+
 - [Mirai Bot](#mirai-bot)
 - [Goatbot](#goatbot)
 - [HexaBot](#hexabot)
 - [YueV1](#yuev1)
-
 
 ## Install Packages
 
@@ -51,8 +51,12 @@ module.exports.run = async function ({ api, event }) {
         apikey: "YOUR-API-KEY",
       },
     );
-    if(response.data.code !== 200) {
-      api.sendMessage(`API ERROR: ${response.data}`, event.threadID, event.messageID);
+    if (response.data.code !== 200) {
+      api.sendMessage(
+        `API ERROR: ${response.data}`,
+        event.threadID,
+        event.messageID,
+      );
       return;
     }
     var file = fs.createWriteStream(__dirname + "/cache/shoti.mp4");
@@ -191,9 +195,13 @@ async function shoti(event, api) {
       const response = await axios.post(apiUrl, {
         apikey: "YOUR_API_KEY",
       });
-      if(response.data.code !== 200) {
-      api.sendMessage(`API ERROR: ${response.data}`, event.threadID, event.messageID);
-      return;
+      if (response.data.code !== 200) {
+        api.sendMessage(
+          `API ERROR: ${response.data}`,
+          event.threadID,
+          event.messageID,
+        );
+        return;
       }
       const videoUrl = response.data.data.url;
       await new Promise((resolve, reject) => {
@@ -271,9 +279,9 @@ Please wait for the video..`,
       let { data } = await axios.post(apiUrl, {
         apikey: "YOUR_API_KEY",
       });
-      if(data.code !== 200) {
-      api.sendMessage(`API ERROR: ${data}`, event.threadID, event.messageID);
-      return;
+      if (data.code !== 200) {
+        api.sendMessage(`API ERROR: ${data}`, event.threadID, event.messageID);
+        return;
       }
 
       console.log("API Response:", data); // Log the API response for inspection
