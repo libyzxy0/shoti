@@ -20,8 +20,8 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
     <h1 class="text-2xl font-medium text-white">Services</h1>
     <div class="w-full h-auto flex flex-wrap flex-row my-3 justify-between">
       <Servicecard name="Website" status="success" />
-      <Servicecard name="Get Shoti" status="warning" />
-      <Servicecard name="Add Shoti" status="error" />
+      <Servicecard name="Get Shoti" status="success" />
+      <Servicecard name="Add Shoti" status="warning" />
       <Servicecard name="Create Key" status="success" />
     </div>
     <h1 class="text-2xl font-medium text-white">Statistics</h1>
