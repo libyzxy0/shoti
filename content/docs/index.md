@@ -43,7 +43,7 @@ const axios = require("axios");
 
   //Make a post request
   let { data } = await axios.post(apiUrl, {
-    apikey: "YOUR_API_KEY",
+    apikey: "YOUR_API_KEY", //$shoti-xxxxxx
   });
 
   console.log(data);
