@@ -61,6 +61,7 @@ const axios = require("axios");
 {
   "code": Number,
   "message": String,
+  "errID": ObjectID //false
   "data": {
     "_shoti_rank": Number,
     "region": String,
@@ -70,7 +71,8 @@ const axios = require("axios");
     "duration": String,
     "user": {
       "username": String,
-      "nickname": String
+      "nickname": String,
+      "userID": String
     }
   }
 }
