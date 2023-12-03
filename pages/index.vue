@@ -10,15 +10,7 @@ useSeoMeta({
   ogImage: "https://shoti-api.vercel.app/favicon.png",
   twitterCard: "summary_large_image",
 });
-useHead({
-  script: [
-    {
-      async: true,
-      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7907467111563884',
-      crossorigin: 'anonymous'
-    } 
-  ]
-})
+
 let { pending, data } = useFetch(config.public.apiBase + "/info", {
   lazy: true,
   server: false,
