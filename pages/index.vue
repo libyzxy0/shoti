@@ -21,6 +21,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
 });
 </script>
 <template>
+  <ModalDonate />
   <Header />
   <ModalOne :visible="generatedkey ? generatedkey : 'f'" />
   <div class="container mt-24 w-full px-3">
