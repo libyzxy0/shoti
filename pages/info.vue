@@ -7,7 +7,7 @@ let responseData = ref({
 const config = useRuntimeConfig();
 
 const fetchData = async () => {
-  let response = await useFetch(config.public.apiBase + "/info", {
+  let { pending, data } = await useFetch(config.public.apiBase + "/info", {
     server: false,
     method: "POST",
     headers: {
@@ -16,11 +16,12 @@ const fetchData = async () => {
     body: JSON.stringify({ f: "stats" }),
   });
 
-  responseData.value = response; // Assign the entire response to responseData
+  responseData.value.pending = pending;
+  responseData.value.data = data;
 
-  if (!responseData.value.pending) {
+  if (!pending) {
     apikey.value = localStorage.getItem("saved_apikey");
-  } 
+  }
 };
 
 onMounted(() => {
