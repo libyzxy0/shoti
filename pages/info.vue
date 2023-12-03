@@ -1,17 +1,23 @@
 <script setup>
 let apikey = ref("");
 const config = useRuntimeConfig();
+const fetchData = async () => {
+  let { pending, data } = await useFetch(config.public.apiBase + "/info", {
+    server: false,
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ f: "stats" }),
+  });
+  if (!pending) {
+    apikey.value = localStorage.getItem("saved_apikey");
+  }
+};
+
 onMounted(() => {
-  apikey.value = localStorage.getItem("saved_apikey");
-});
-let { pending, data } = useFetch(config.public.apiBase + "/info", {
-  lazy: true,
-  server: false,
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ f: "stats" }),
+  fetchData(); // Initial data fetch
+  setInterval(fetchData, 1000); // Fetch data every 1 second
 });
 </script>
 <template>
