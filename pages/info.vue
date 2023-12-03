@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, useContext } from 'vue';
 
-const { config } = useContext();
+const config = useRuntimeConfig();
 
 const apikey = ref("");
 const responseData = ref({
