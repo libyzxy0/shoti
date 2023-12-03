@@ -20,8 +20,7 @@ const fetchData = async () => {
 
   if (!responseData.value.pending) {
     apikey.value = localStorage.getItem("saved_apikey");
-    // Update your data bindings here, e.g., responseData.value.data.requests, responseData.value.data.users, responseData.value.data.videos
-  }
+  } 
 };
 
 onMounted(() => {
@@ -43,15 +42,15 @@ onMounted(() => {
     <div class="w-full my-5 text-center">
       <hr class="h-px bg-slate-600 border-0 w-full mb-2" />
       <h1 class="text-white font-medium text-5xl mt-5 transition-all">
-        {{ pending ? "0" : data.requests }}
+        {{ responseData.pending ? "0" : responseData.data.requests }}
       </h1>
       <p class="text-white mt-3">Total Requests</p>
       <h1 class="text-white font-medium text-5xl mt-5 transition-all">
-        {{ pending ? "0" : data.users }}
+        {{ responseData.pending ? "0" : responseData.data.users }}
       </h1>
       <p class="text-white mt-3">Users</p>
       <h1 class="text-white font-medium text-5xl mt-5 transition-all">
-        {{ pending ? "0" : data.videos }}
+        {{ responseData.pending ? "0" : responseData.data.videos }}
       </h1>
       <p class="text-white mt-3">Videos</p>
     </div>
