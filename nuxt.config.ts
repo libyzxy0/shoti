@@ -1,5 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      script: [
+        {
+          async: true,
+          src: '',
+          crossorigin: 'anonymous'
+        }
+      ]
+    }
+  },
   devtools: { enabled: false },
   site: {
     url: "https://shoti.vercel.app",
@@ -35,7 +46,7 @@ export default defineNuxtConfig({
   content: {
     highlight: {
       theme: {
-        default: "github-dark",
+        default: "nord",
         dark: "github-dark",
         sepia: "monokai",
       },
