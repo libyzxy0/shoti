@@ -1,8 +1,13 @@
 <script setup>
 let apikey = ref("");
+let responseData = ref({
+  pending: true,
+  data: { requests: 0, users: 0, videos: 0 },
+});
 const config = useRuntimeConfig();
+
 const fetchData = async () => {
-  let { pending, data } = await useFetch(config.public.apiBase + "/info", {
+  let response = await useFetch(config.public.apiBase + "/info", {
     server: false,
     method: "POST",
     headers: {
@@ -10,8 +15,12 @@ const fetchData = async () => {
     },
     body: JSON.stringify({ f: "stats" }),
   });
-  if (!pending) {
+
+  responseData.value = response; // Assign the entire response to responseData
+
+  if (!responseData.value.pending) {
     apikey.value = localStorage.getItem("saved_apikey");
+    // Update your data bindings here, e.g., responseData.value.data.requests, responseData.value.data.users, responseData.value.data.videos
   }
 };
 
