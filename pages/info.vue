@@ -1,26 +1,38 @@
 <script setup>
-let apikey = ref("");
-let responseData = ref({
+import { ref, onMounted } from 'vue';
+
+const apikey = ref("");
+const responseData = ref({
   pending: true,
   data: { requests: 0, users: 0, videos: 0 },
 });
 const config = useRuntimeConfig();
 
 const fetchData = async () => {
-  let { pending, data } = await useFetch(config.public.apiBase + "/info", {
-    server: false,
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ f: "stats" }),
-  });
+  try {
+    let response = await fetch(config.public.apiBase + "/info", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ f: "stats" }),
+    });
 
-  responseData.value.pending = pending;
-  responseData.value.data = data;
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
-  if (!pending) {
-    apikey.value = localStorage.getItem("saved_apikey");
+    let { pending, data } = await response.json();
+
+    // Update the reactive properties individually
+    responseData.value.pending = pending;
+    responseData.value.data = data;
+
+    if (!pending) {
+      apikey.value = localStorage.getItem("saved_apikey");
+    }
+  } catch (error) {
+    console.error('Error fetching data:', error);
   }
 };
 
