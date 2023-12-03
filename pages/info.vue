@@ -1,12 +1,13 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted, useContext } from 'vue';
+
+const { config } = useContext();
 
 const apikey = ref("");
 const responseData = ref({
   pending: true,
   data: { requests: 0, users: 0, videos: 0 },
 });
-const config = useRuntimeConfig();
 
 const fetchData = async () => {
   try {
@@ -22,13 +23,15 @@ const fetchData = async () => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    let { pending, data } = await response.json();
+    let data = await response.json();
 
-    // Update the reactive properties individually
-    responseData.value.pending = pending;
+    // Assuming your API response structure has a 'data' property
     responseData.value.data = data;
 
-    if (!pending) {
+    // Assuming you want to set 'pending' to false when data is received
+    responseData.value.pending = false;
+
+    if (!responseData.value.pending) {
       apikey.value = localStorage.getItem("saved_apikey");
     }
   } catch (error) {
@@ -41,6 +44,7 @@ onMounted(() => {
   setInterval(fetchData, 1000); // Fetch data every 1 second
 });
 </script>
+
 <template>
   <Header />
   <div class="container w-full mt-24 w-full px-3">
