@@ -1,6 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
+  head: {
+    script: [
+      {
+        async: true,
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7907467111563884",
+        crossorigin: "anonymous"
+      }
+    ]
+  }, 
   site: {
     url: "https://shoti.vercel.app",
   },
