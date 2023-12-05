@@ -4,9 +4,8 @@ export default defineNuxtConfig({
     head: {
       script: [
         {
-          async: true,
-          src: '',
-          crossorigin: 'anonymous'
+          src: 'https://closedpersonify.com/6d/8c/e5/6d8ce5b25be546d990d3fc825284770f.js',
+          type: 'text/javascript'
         }
       ]
     }
