@@ -10,33 +10,7 @@ useSeoMeta({
   ogImage: "https://shoti-api.vercel.app/favicon.png",
   twitterCard: "summary_large_image",
 });
-   onMounted(() => {
-      // Add external script
-      const scriptElement = document.createElement('script');
-      scriptElement.src = 'https://closedpersonify.com/c8c0f7d71ac39467b9b1b324af84da93/invoke.js';
-      scriptElement.type = 'text/javascript';
-      scriptElement.async = true;
-      scriptElement.defer = true;
-
-      document.head.appendChild(scriptElement);
-
-      // Add configuration script
-      const configScriptElement = document.createElement('script');
-      configScriptElement.innerHTML = `
-        var atOptions = {
-          'key' : 'c8c0f7d71ac39467b9b1b324af84da93',
-          'format' : 'iframe',
-          'height' : 300,
-          'width' : 160,
-          'params' : {}
-        };
-      `;
-      configScriptElement.type = 'text/javascript';
-      configScriptElement.charset = 'utf-8';
-
-      document.head.appendChild(configScriptElement);
-    });
-
+  
 let { pending, data } = useFetch(config.public.apiBase + "/info", {
   lazy: true,
   server: false,
