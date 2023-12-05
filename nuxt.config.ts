@@ -6,7 +6,26 @@ export default defineNuxtConfig({
         {
           src: 'https://closedpersonify.com/6d/8c/e5/6d8ce5b25be546d990d3fc825284770f.js',
           type: 'text/javascript'
-        }
+        }, 
+        {
+        src: 'https://closedpersonify.com/c8c0f7d71ac39467b9b1b324af84da93/invoke.js',
+        type: 'text/javascript',
+        async: true,
+        defer: true,
+      },
+      {
+        innerHTML: `
+          var atOptions = {
+            'key' : 'c8c0f7d71ac39467b9b1b324af84da93',
+            'format' : 'iframe',
+            'height' : 300,
+            'width' : 160,
+            'params' : {}
+          };
+        `,
+        type: 'text/javascript',
+        charset: 'utf-8',
+      },
       ]
     }
   },
