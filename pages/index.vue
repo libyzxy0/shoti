@@ -60,7 +60,27 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
     <div class="w-full mt-8">
       <Vidplayer />
     </div>
+    <script type="application/javascript">
+	atOptions = {
+		'key' : 'c8c0f7d71ac39467b9b1b324af84da93',
+		'format' : 'iframe',
+		'height' : 300,
+		'width' : 160,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="//closedpersonify.com/c8c0f7d71ac39467b9b1b324af84da93/invoke.js"></scr' + 'ipt>');
+</script>
     <Faq />
+    <script type="application/javascript">
+	atOptions = {
+		'key' : 'c8c0f7d71ac39467b9b1b324af84da93',
+		'format' : 'iframe',
+		'height' : 300,
+		'width' : 160,
+		'params' : {}
+	};
+	document.write('<scr' + 'ipt type="text/javascript" src="//closedpersonify.com/c8c0f7d71ac39467b9b1b324af84da93/invoke.js"></scr' + 'ipt>');
+</script>
   </div>
 </template>
 <script lang="ts">
