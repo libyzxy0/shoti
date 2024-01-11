@@ -39,7 +39,7 @@ const axios = require("axios");
 
 (async function () {
   //Declare api url
-  let apiUrl = "https://api--v1-shoti.vercel.app/api/v1/get";
+  let apiUrl = "https://your-shoti-api.vercel.app/api/v1/get";
 
   //Make a post request
   let { data } = await axios.post(apiUrl, {
