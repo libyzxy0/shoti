@@ -84,7 +84,7 @@ export default {
           this.isLoading = true;
           try {
             const response = await axios.post(
-              "https://api--v1-shoti.vercel.app/api" + "/createkey",
+              "https://your-shoti-api.vercel.app/api" + "/createkey",
               {
                 username: this.apikeyName,
               },
