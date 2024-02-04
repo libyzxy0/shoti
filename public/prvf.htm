@@ -53,9 +53,14 @@
                 document.getElementById('btn').classList.remove('bg-yellow-400');
                 document.getElementById('btn').classList.add('bg-green-400')
                     //alert(JSON.stringify(data))
-                    document.getElementById('txt').textContent = data.id ? data.id : "Check tpken or video url";
+                    document.getElementById('txt').textContent = data.id ? data.id : "Check token or video url";
                     // Add any further actions here after successful submission
-                    urlInput.value = "";
+                    if(data.id) {
+                        urlInput.value = "";
+                    } else {
+                        urlInput.value = "";
+                        tokenInput.value = "";
+                    }
                 } else {
                     console.error("Failed to create video. Status:", response.status);
                 }
