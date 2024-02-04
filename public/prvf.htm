@@ -17,6 +17,8 @@
     <h1 class="mt-[5rem] text-green-400 font-bold text-3xl">Shoti API</h1>
     <p class="text-gray-100 font-medium">Video Adding Panel</p>
     <input type="url" name="url" id="url" class="outline-none border-none py-3 px-3 rounded bg-gray-600 w-[90%] mt-[5rem] font-bold text-white focus:ring-1 focus:ring-green-400" placeholder="Enter url">
+    <input type="texg" name="token" id="token" class="outline-none border-none py-3 px-3 rounded bg-gray-600 w-[90%] mt-[1rem] font-bold text-white focus:ring-1 focus:ring-blue-400" placeholder="Enter your token">
+   
     <button class="w-[90%] py-3 border-none outline-none bg-green-400 mt-2 rounded font-bold text-white transition-transform transform hover:scale-100 focus:scale-95 focus:outline-none active:scale-95" onclick="handleSubmit()" id="btn">Submit</button>
     <h1 class="text-green-400 mt-5 text-center mx-2" id="txt">Info</h1>
     <script>
@@ -24,10 +26,13 @@
             const apiUrl = "https://your-shoti-api.vercel.app/api/create-video";
             const urlInput = document.getElementById("url");
             const url = urlInput.value;
+            const tokenInput = document.getElementById("token");
+            const token = tokenInput.value;
             if(!url.startsWith("https://vt.tiktok.com/")) {
                 document.getElementById('txt').textContent = "Not a tiktok video!";
                 return;
             }
+            if(!token) return document.getElementById('txt').textContent = "Please enter your token";
 
             try {
                document.getElementById('btn').classList.remove('bg-green-400');
@@ -39,7 +44,7 @@
                     },
                     body: JSON.stringify({
                         url: url, 
-                        token: "shshwhwheh"
+                        token: token
                     })
                 });
                 const data = await response.json();
@@ -48,8 +53,7 @@
                 document.getElementById('btn').classList.remove('bg-yellow-400');
                 document.getElementById('btn').classList.add('bg-green-400')
                     //alert(JSON.stringify(data))
-                    console.log("Video creation successful! ID:" + data.id);
-                    let status = `{ id: "${data.id}", url: "${data.url}" }`; document.getElementById('txt').textContent = status;
+                    document.getElementById('txt').textContent = "Video creation successful! ID:" + data.id;
                     // Add any further actions here after successful submission
                     urlInput.value = "";
                 } else {
