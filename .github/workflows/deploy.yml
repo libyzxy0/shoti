@@ -34,6 +34,6 @@ jobs:
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "wide-bear-54"
+          project: "shoti-api"
           entrypoint: "server/index.ts" # 📝 Update the entrypoint if necessary
           root: ".output" # 📝 Update the root if necessary
