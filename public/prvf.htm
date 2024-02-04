@@ -53,7 +53,7 @@
                 document.getElementById('btn').classList.remove('bg-yellow-400');
                 document.getElementById('btn').classList.add('bg-green-400')
                     //alert(JSON.stringify(data))
-                    document.getElementById('txt').textContent = "Video creation successful! ID:" + data.id;
+                    document.getElementById('txt').textContent = data.id ? data.id : "Check tpken or video url";
                     // Add any further actions here after successful submission
                     urlInput.value = "";
                 } else {
