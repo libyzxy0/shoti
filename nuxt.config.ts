@@ -57,7 +57,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: "https://your-shoti-api.vercel.app/api",
+      apiBase: "https://shoti-srv1.onrender.com/api",
     },
   },
 });
