@@ -7,7 +7,7 @@ useSeoMeta({
   description: "A powerful api that sends random tiktok beautiful girl videos.",
   ogDescription:
     "A powerful api that sends random tiktok beautiful girl videos.",
-  ogImage: "https://shoti-api.vercel.app/favicon.png",
+  ogImage: "https://shoti-api.deno.dev/favicon.png",
   twitterCard: "summary_large_image",
 });
   
@@ -84,7 +84,7 @@ export default {
           this.isLoading = true;
           try {
             const response = await axios.post(
-              "https://your-shoti-api.vercel.app/api" + "/createkey",
+              "https://shoti-srv1.onrender.com/api" + "/createkey",
               {
                 username: this.apikeyName,
               },
