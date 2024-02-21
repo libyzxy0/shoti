@@ -13,6 +13,7 @@ Shoti API messenger chatbots integration.
 - [Goatbot](#goatbot)
 - [HexaBot](#hexabot)
 - [YueV1](#yuev1)
+- [YSDAkhiro](#ysd-akhiro)
 
 ## Install Packages
 
@@ -320,6 +321,59 @@ Oops! An error occurred while fetching the video.`,
         event.threadID,
         event.messageID,
       );
+    }
+  },
+};
+```
+
+## YSD Akhiro
+
+**akhiro/cmds/shoti.js**
+
+```js
+const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
+
+module.exports = {
+  config: {
+    name: "shoti",
+    role: 1,
+    description: "Get video from Shoti API",
+    usage: "shoti",
+    author: "Rui",
+  },
+  onRun: async ({ api, event, args }) => {
+    try {
+      const apiKey = "$shoti-1hn634vu67edaqv02qo";
+
+      const postData = {
+        apikey: apiKey,
+      };
+      
+      const response = await axios.post('https://shoti-srv1.onrender.com/api/v1/get', postData);
+
+      if (response.data.code === 200) {
+        const videoData = response.data.data;
+        const videoURL = videoData.url;
+        const videoFilename = `${Date.now()}_shoti.mp4`;
+
+        const videoBuffer = await axios.get(videoURL, { responseType: 'arraybuffer' });
+        const videoPath = path.join(__dirname, 'videos', videoFilename);
+        fs.writeFileSync(videoPath, Buffer.from(videoBuffer.data, 'utf-8'));
+
+        const fileStream = fs.createReadStream(videoPath);
+        await api.sendMessage({ attachment: fileStream, body: `@${videoData.user.nickname}` }, event.threadID);
+
+        setTimeout(() => {
+          fs.unlinkSync(videoPath);
+        }, 5500);
+      } else {
+        api.sendMessage(`❌ | API Error: ${response.data.message}`, event.threadID);
+      }
+    } catch (error) {
+      console.error(error);
+      api.sendMessage(`❌ | An error occurred: ${error.message}`, event.threadID);
     }
   },
 };
