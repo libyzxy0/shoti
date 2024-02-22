@@ -21,7 +21,7 @@ Getting apikey is really easy, we only get your name and we serve your apikey, g
 ### Curl
 
 ```shell
-curl -d '{"apikey":"YOUR_API_KEY"}' -H "Content-Type: application/json" -X POST https://api--v1-shoti.vercel.app/api/v1/get
+curl -d '{"apikey":"YOUR_API_KEY"}' -H "Content-Type: application/json" -X POST https://shoti-srv1.onrender.com/api/v1/get
 ```
 
 ### Node.js
@@ -39,7 +39,7 @@ const axios = require("axios");
 
 (async function () {
   //Declare api url
-  let apiUrl = "https://your-shoti-api.vercel.app/api/v1/get";
+  let apiUrl = "shoti-srv1.onrender.com/api/v1/get";
 
   //Make a post request
   let { data } = await axios.post(apiUrl, {
