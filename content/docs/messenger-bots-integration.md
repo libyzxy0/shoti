@@ -12,8 +12,8 @@ Shoti API messenger chatbots integration.
 - [Mirai Bot](#mirai-bot)
 - [Goatbot](#goatbot)
 - [HexaBot](#hexabot)
-- [YueV1](#yuev1)
-- [YSDAkhiro](#ysd-akhiro)
+- [Yue](#yue)
+- [YSD Akhiro](#ysd-akhiro)
 
 ## Install Packages
 
@@ -47,7 +47,7 @@ module.exports.run = async function ({ api, event }) {
     const request = require("request");
     const fs = require("fs");
     let response = await axios.post(
-      "https://api--v1-shoti.vercel.app/api/v1/get",
+      "https://shoti-srv1.onrender.com/api/v1/get",
       {
         apikey: "YOUR-API-KEY",
       },
@@ -112,7 +112,7 @@ module.exports = {
 
     try {
       let response = await axios.post(
-        "https://api--v1-shoti.vercel.app/api/v1/get",
+        "https://shoti-srv1.onrender.com/api/v1/get",
         {
           apikey: "shoti-1ha4h3do8at9a7ponr",
         },
@@ -190,7 +190,7 @@ async function shoti(event, api) {
       return;
     }
 
-    const apiUrl = "https://api--v1-shoti.vercel.app/api/v1/get";
+    const apiUrl = "https://shoti-srv1.onrender.com/api/v1/get";
 
     try {
       const response = await axios.post(apiUrl, {
@@ -240,87 +240,54 @@ async function shoti(event, api) {
 module.exports = shoti;
 ```
 
-## YueV1
+## Yue
 
 **script/commands/shoti.js**
 
 ```js
-const axios = require("axios");
-const path = require("path");
-const fs = require("fs");
+const axios = require('axios');
+const fs = require('fs');
+const path = require('path');
 
 module.exports = {
   config: {
     name: "shoti",
-    description: "Watch shoti video 📸",
-    usage: ":shoti",
-    author: "XyryllPanget",
-    // Redesign by RUI
+    role: 1,
+    description: "Get video from Shoti API",
+    usage: "shoti",
+    author: "Rui",
   },
-
-  run: async function ({ api, event, message }) {
-    const xycost = 0; // Setting xycost to 0
-    const user = event.senderID;
-    // Deduct the cost of using the command
-    // Code to deduct money from the user goes here if needed
-
-    api.sendMessage(
-      `📸 𝗦𝗵𝗼𝘁𝗶:
-
-You have successfully purchased a shoti video for ${xycost}💵!
-Please wait for the video..`,
-      event.threadID,
-      event.messageID,
-    );
-
+  onRun: async ({ api, event, args }) => {
     try {
-      let apiUrl = "https://api--v1-shoti.vercel.app/api/v1/get";
+      const apiKey = "$shoti-1hn634vu67edaqv02qo";
 
-      // Make a POST request to get the video URL
-      let { data } = await axios.post(apiUrl, {
-        apikey: "YOUR_API_KEY",
-      });
-      if (data.code !== 200) {
-        api.sendMessage(`API ERROR: ${data}`, event.threadID, event.messageID);
-        return;
+      const postData = {
+        apikey: apiKey,
+      };
+      
+      const response = await axios.post('https://shoti-srv1.onrender.com/api/v1/get', postData);
+
+      if (response.data.code === 200) {
+        const videoData = response.data.data;
+        const videoURL = videoData.url;
+        const videoFilename = `${Date.now()}_shoti.mp4`;
+
+        const videoBuffer = await axios.get(videoURL, { responseType: 'arraybuffer' });
+        const videoPath = path.join(__dirname, 'videos', videoFilename);
+        fs.writeFileSync(videoPath, Buffer.from(videoBuffer.data, 'utf-8'));
+
+        const fileStream = fs.createReadStream(videoPath);
+        await api.sendMessage({ attachment: fileStream, body: `@${videoData.user.nickname}` }, event.threadID);
+
+        setTimeout(() => {
+          fs.unlinkSync(videoPath);
+        }, 5500);
+      } else {
+        api.sendMessage(`❌ | API Error: ${response.data.message}`, event.threadID);
       }
-
-      console.log("API Response:", data); // Log the API response for inspection
-
-      const videoUrl = data.data.url; // Extract video URL from the response
-
-      const downloadDirectory = path.join(__dirname, "cache");
-      const downloadPath = path.join(downloadDirectory, "video.mp4");
-
-      // Create the cache directory if it doesn't exist
-      if (!fs.existsSync(downloadDirectory)) {
-        fs.mkdirSync(downloadDirectory, { recursive: true });
-      }
-
-      const response = await axios.get(videoUrl, { responseType: "stream" });
-      const file = fs.createWriteStream(downloadPath);
-
-      response.data.pipe(file);
-
-      file.on("finish", () => {
-        file.close(() => {
-          api.sendMessage(
-            {
-              attachment: fs.createReadStream(downloadPath),
-            },
-            event.threadID,
-          );
-        });
-      });
     } catch (error) {
       console.error(error);
-      api.sendMessage(
-        `📸 𝗦𝗵𝗼𝘁𝗶:
-
-Oops! An error occurred while fetching the video.`,
-        event.threadID,
-        event.messageID,
-      );
+      api.sendMessage(`❌ | An error occurred: ${error.message}`, event.threadID);
     }
   },
 };
