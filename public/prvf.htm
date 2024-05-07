@@ -28,7 +28,7 @@
             const url = urlInput.value;
             const tokenInput = document.getElementById("token");
             const token = tokenInput.value;
-            if(!url.startsWith("https://www.tiktok.com/")) {
+            if(!url.includes("tiktok.com")) {
                 document.getElementById('txt').textContent = "Not a tiktok video!";
                 return;
             }
