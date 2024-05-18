@@ -39,7 +39,7 @@ const axios = require("axios");
 
 (async function () {
   //Declare api url
-  let apiUrl = "shoti-srv1.onrender.com/api/v1/get";
+  let apiUrl = "https://shoti-srv1.onrender.com/api/v1/get";
 
   //Make a post request
   let { data } = await axios.post(apiUrl, {
