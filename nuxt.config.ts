@@ -57,7 +57,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiBase: "https://shoti-srv2-itslibyzxy0.koyeb.app/api",
+      apiBase: "https://shoti-srv1.onrender.com/api",
     },
   },
 });
