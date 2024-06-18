@@ -84,7 +84,7 @@ export default {
           this.isLoading = true;
           try {
             const response = await axios.post(
-              "https://shoti-srv1.ondernder.com/api" + "/createkey",
+              "https://shoti-srv1.onrender.com/api" + "/createkey",
               {
                 username: this.apikeyName,
               },
