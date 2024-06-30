@@ -20,15 +20,15 @@
             >
           </li>
           <li>
-            <a href="https://www.libyzxy0.xyz" class="hover:underline"
-              >Developer Contact</a
+            <a href="https://www.libyzxy0.com" class="hover:underline"
+              >Developer</a
             >
           </li>
         </ul>
       </div>
       <hr class="my-6 border border-gray-600 sm:mx-auto lg:my-8" />
       <span class="block text-sm sm:text-center text-gray-400"
-        >© 2023
+        >© 2024 
         <a href="https://shoti.vercel.app/" class="hover:underline">Shoti API</a
         >. All Rights Reserved.</span
       >
