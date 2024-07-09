@@ -24,7 +24,7 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
 </script>
 <template>
   <Header />
-  <div class="container mt-14 w-full">
+  <div class="container w-full">
     <table class="table-fixed w-full">
       <thead class="w-full bg-gray-800 h-14 px-5 text-white shadow">
         <tr>
