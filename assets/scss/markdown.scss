@@ -6,7 +6,7 @@
   -webkit-text-size-adjust: 100%;
   margin: 0;
   color: #e6edf3;
-  background-color: #1e293b;
+  background-color: #030712;
   font-family: "Nunito", sans-serif;
   font-size: 16px;
   line-height: 1.5;
@@ -55,7 +55,7 @@
 
 .markdown-body a {
   background-color: transparent;
-  color: #21d3ed;
+  color: #d946ef;
   text-decoration: none;
 }
 
@@ -225,7 +225,7 @@
 .markdown-body [role="button"]:focus,
 .markdown-body input[type="radio"]:focus,
 .markdown-body input[type="checkbox"]:focus {
-  outline: 2px solid #21d3ed;
+  outline: 2px solid #d946ef;
   outline-offset: -2px;
   box-shadow: none;
 }
@@ -241,7 +241,7 @@
 .markdown-body [role="button"]:focus-visible,
 .markdown-body input[type="radio"]:focus-visible,
 .markdown-body input[type="checkbox"]:focus-visible {
-  outline: 2px solid #21d3ed;
+  outline: 2px solid #d946ef;
   outline-offset: -2px;
   box-shadow: none;
 }
@@ -381,7 +381,7 @@
 }
 
 .markdown-body .color-fg-accent {
-  color: #21d3ed !important;
+  color: #d946ef !important;
 }
 
 .markdown-body .color-fg-attention {
@@ -860,7 +860,7 @@
   left: -24px;
   pointer-events: none;
   content: "";
-  border: 2px solid #21d3ed;
+  border: 2px solid #d946ef;
   border-radius: 6px;
 }
 
@@ -941,7 +941,7 @@
 .markdown-body .pl-mh .pl-en,
 .markdown-body .pl-ms {
   font-weight: bold;
-  color: #21d3ed;
+  color: #d946ef;
 }
 
 .markdown-body .pl-mi {
@@ -971,7 +971,7 @@
 
 .markdown-body .pl-mi2 {
   color: #c9d1d9;
-  background-color: #21d3ed;
+  background-color: #d946ef;
 }
 
 .markdown-body .pl-mdr {
@@ -1080,7 +1080,7 @@
 }
 
 .markdown-body .markdown-alert.markdown-alert-note {
-  border-left-color: #21d3ed;
+  border-left-color: #d946ef;
 }
 
 .markdown-body .markdown-alert.markdown-alert-important {

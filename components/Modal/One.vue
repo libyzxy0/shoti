@@ -48,7 +48,7 @@ defineProps({
           >
           <input
             type="text"
-            class="py-3 px-4 block w-full rounded-md text-sm focus:border-blue-500 focus:ring-cyan-500 bg-slate-700 border-gray-700 text-gray-400"
+            class="py-3 px-4 block w-full rounded-md text-sm focus:border-blue-500 focus:ring-fuchsia-500 bg-slate-700 border-gray-700 text-gray-400"
             placeholder="Copy"
             :value="visible"
             readonly
@@ -66,7 +66,7 @@ defineProps({
           </button>
           <button
             @click="copy()"
-            class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-cyan-500 text-white hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 transition-all text-sm focus:ring-offset-gray-800"
+            class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-fuchsia-500 text-white hover:bg-fuchsia-600 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 transition-all text-sm focus:ring-offset-gray-800"
           >
             {{ btn }}
           </button>

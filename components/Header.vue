@@ -6,10 +6,10 @@ const toggleMenu = () => {
 </script>
 <template>
   <div
-    class="fixed transition-all flex flex-row justify-between top-0 bg-slate-700 py-3 w-full z-20"
+    class="sticky transition-all flex flex-row justify-between top-0 bg-gray-900 py-3 w-full z-20"
     :class="isMenuOpen ? '' : 'shadow'"
   >
-    <h1 class="flex flex-row px-4 text-2xl text-cyan-400 font-medium">
+    <h1 class="flex flex-row px-4 text-2xl text-fuchsia-400 font-medium">
       Shoti API
     </h1>
     <IconsBar @click="toggleMenu()" :class="isMenuOpen ? 'hidden' : ''" />
@@ -18,7 +18,7 @@ const toggleMenu = () => {
 
   <div
     :class="isMenuOpen ? 'h-[15rem] mt-3 shadow' : 'h-0'"
-    class="fixed flex top-0 bg-slate-700 w-full z-10 transition-all py-1"
+    class="fixed flex top-0 bg-gray-900 w-full z-10 transition-all py-1"
   >
     <ul
       :class="isMenuOpen ? '' : 'mt-[-8rem]'"

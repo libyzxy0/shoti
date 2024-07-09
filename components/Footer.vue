@@ -1,8 +1,8 @@
 <template>
-  <footer class="w-full bg-slate-700 shadow">
+  <footer class="w-full bg-gray-900 shadow">
     <div class="w-full max-w-screen-xl p-4 md:py-8">
       <div class="sm:flex sm:items-center sm:justify-between">
-        <h1 class="text-2xl text-cyan-400 font-medium mb-2">Shoti API</h1>
+        <h1 class="text-2xl text-fuchsia-400 font-medium mb-2">Shoti API</h1>
         <ul
           class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0"
         >

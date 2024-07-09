@@ -20,16 +20,16 @@ const { pending, data } = useFetch(config.public.apiBase + "/v1/get", {
         ? 'justify-center items-center h-[17rem]'
         : 'justify-between h-[17rem]'
     "
-    class="flex flex-row bg-slate-600 w-full rounded shadow mb-3"
+    class="flex flex-row bg-gray-800 w-full rounded shadow mb-3"
   >
-    <h1 :class="pending ? '' : 'hidden'" class="text-2xl text-cyan-400">
+    <h1 :class="pending ? '' : 'hidden'" class="text-2xl text-fuchsia-400">
       Fetching data from <a :href="$config.public.apiBase">server</a>.
     </h1>
     <div
       :class="pending ? 'hidden' : ''"
       class="flex flex-col w-[65%] h-auto text-center rounded px-2 py-2"
     >
-      <h1 class="text-2xl text-cyan-400 my-3">Watch</h1>
+      <h1 class="text-2xl text-fuchsia-400 my-3">Mini Player</h1>
       <p class="text-white">
         <b>Username:</b>
         {{ pending ? "Loading..." : data?.data?.user.username }}

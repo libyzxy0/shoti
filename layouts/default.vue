@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-slate-800 h-screen">
+  <div class="w-full bg-gray-950 h-screen">
     <slot />
     <Footer />
   </div>

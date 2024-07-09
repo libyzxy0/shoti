@@ -26,10 +26,10 @@ let { pending, data } = useFetch(config.public.apiBase + "/info", {
   <Header />
   <div class="container mt-14 w-full">
     <table class="table-fixed w-full">
-      <thead class="w-full bg-slate-700 h-14 px-5 text-white shadow">
+      <thead class="w-full bg-gray-800 h-14 px-5 text-white shadow">
         <tr>
-          <th class="bg-blue-600">Rank</th>
-          <th class="bg-cyan-400">Name</th>
+          <th class="bg-red-600">Rank</th>
+          <th class="bg-fuchsia-400">Name</th>
           <th class="bg-green-400">Requests</th>
         </tr>
       </thead>
