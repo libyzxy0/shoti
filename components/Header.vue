@@ -21,7 +21,7 @@ const toggleMenu = () => {
     class="fixed flex top-0 bg-gray-900 w-full z-10 transition-all py-1"
   >
     <ul
-      :class="isMenuOpen ? '' : 'mt-[-8rem]'"
+      :class="isMenuOpen ? '' : 'mt-[-12rem]'"
       class="transition-all flex flex-col text-center w-full"
     >
       <hr
