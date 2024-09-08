@@ -1,15 +1,9 @@
 <script setup>
 const config = useRuntimeConfig();
-const { pending, data } = useFetch(config.public.apiBase + "/v1/get", {
+const { pending, data } = useFetch("https://libyzxy0.serv00.net", {
   lazy: true,
   server: false,
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    apikey: "shoti-1hdv16i3pl75egkudag",
-  }),
+  method: "GET"
 });
 </script>
 
